@@ -19,7 +19,7 @@
         );
       }
 
-      function ChatMessages({ message, sender }) {
+      function ChatMessage({ message, sender }) {
         return (
           <div>
             {sender === "robot" ? (
@@ -34,8 +34,8 @@
           </div>
         );
       }
-      function App() {
-        const chatMessages = [
+      function ChatMessages() {
+        const array = React.useState([
           {
             text: "hello chatbot",
             sender: "user",
@@ -56,21 +56,41 @@
             sender: "robot",
             id: "id4",
           },
-        ];
-        //  an array of componnet
-        const chatMessageComponnents = chatMessages.map((chatMessages) => {
-          return (
-            <ChatMessages
-              message={chatMessages.text}
-              sender={chatMessages.sender}
-              key={chatMessages.key}
-            />
-          );
-        });
+        ]);
+        //  current data
+        const chatMessages = array[0];
+        // updater function
+        const setChatMessages = array[1];
+
+        function SendMessage() {
+          // ... spreaad operator create copy of an array
+          setChatMessages([
+            ...chatMessages,
+            { text: "test", sender: "user", id: crypto.randomUUID() },
+          ]);
+        }
+        //  an array of components
+        return (
+          <>
+            <button onClick={SendMessage}>Send message</button>
+            {chatMessages.map((chatMessages) => {
+              return (
+                <ChatMessage
+                  message={chatMessages.text}
+                  sender={chatMessages.sender}
+                  key={chatMessages.id}
+                />
+              );
+            })}
+          </>
+        );
+      }
+
+      function App() {
         return (
           <>
             <ChatInput />
-            {chatMessageComponnents}
+            <ChatMessages />
           </>
         );
       }
