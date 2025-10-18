@@ -51,6 +51,24 @@
         );
       }
       function ChatMessages() {
+        //  an array of components
+        return (
+          <>
+            {chatMessages.map((chatMessages) => {
+              return (
+                <ChatMessage
+                  message={chatMessages.text}
+                  sender={chatMessages.sender}
+                  key={chatMessages.id}
+                />
+              );
+            })}
+          </>
+        );
+      }
+
+      function App() {
+        // lifting the state up
         const [chatMessages, setChatMessages] = React.useState([
           {
             text: "hello chatbot",
@@ -73,24 +91,6 @@
             id: "id4",
           },
         ]);
-
-        //  an array of components
-        return (
-          <>
-            {chatMessages.map((chatMessages) => {
-              return (
-                <ChatMessage
-                  message={chatMessages.text}
-                  sender={chatMessages.sender}
-                  key={chatMessages.id}
-                />
-              );
-            })}
-          </>
-        );
-      }
-
-      function App() {
         return (
           <>
             <ChatInput />
