@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChatInput } from "./componenets/ChatInput";
-import { ChatMessages } from "./componenets/ChatMessages";
+import ChatMessages from "./componenets/ChatMessages";
 import "./App.css";
 
 function App() {
