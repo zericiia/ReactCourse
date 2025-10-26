@@ -1,6 +1,6 @@
 import "./CheckoutPage.css";
 import "./checkout-header.css";
-export function Checkout() {
+export function CheckoutPAge() {
   return (
     <>
       <title>Checkout</title>
