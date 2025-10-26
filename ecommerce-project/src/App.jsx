@@ -10,6 +10,8 @@ function App() {
     <Routes>
       <Route index element={<HomePage />} />
       <Route path="checkout" element={<Checkout />} />
+      {/* <Route path="orders" element={<Orders />} /> */}
+      {/* <Route path="Tracking" element={<Tracking />} /> */}
     </Routes>
   );
 }
