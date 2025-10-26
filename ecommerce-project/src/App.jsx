@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router";
 
 import { HomePage } from "./pages/HomePage";
-import { CheckoutPAge } from "./pages/CheckoutPage";
+import { CheckoutPage } from "./pages/Checkout/CheckoutPage";
 import { TrackingPage } from "./pages/TrackingPage";
 import { OrdersPage } from "./pages/OrdersPage";
 
@@ -11,7 +11,7 @@ function App() {
   return (
     <Routes>
       <Route index element={<HomePage />} />
-      <Route path="checkout" element={<CheckoutPAge />} />
+      <Route path="checkout" element={<CheckoutPage />} />
       <Route path="orders" element={<OrdersPage />} />
       <Route path="Tracking" element={<TrackingPage />} />
     </Routes>
