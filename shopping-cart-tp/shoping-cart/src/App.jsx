@@ -31,20 +31,26 @@ function App() {
         <img src={cartImage} />
       </div>
       <div className="cart-input">
-        <p>Enter a product into the cart</p>
-
         <input
           type="text"
           className="product-input-text"
+          placeholder="Enter a product into the cart"
           onKeyDown={handleKeyDown}
         />
       </div>
       <div className="cart-items">
         {cartItems.map((cartItem, index) => {
           return (
-            <div key={index} className="cartitem">
+            <div key={index} className="cart-item">
               <input className="checkbox-input" type="checkbox" />
-              {cartItem} <button onClick={() => removeItem(index)}>X</button>
+              {cartItem}{" "}
+              <button
+                className="delete-button"
+                onClick={() => removeItem(index)}
+              >
+                X
+              </button>
+              ln
             </div>
           );
         })}

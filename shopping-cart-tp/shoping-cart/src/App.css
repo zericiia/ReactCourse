@@ -44,9 +44,9 @@ body {
   color: black;
 }
 input {
-  color: black;
+  color: rgb(255, 255, 255);
   background-color: gainsboro;
-  border: 1px solid black;
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 8px;
   padding: 10px 15px;
 }
@@ -54,4 +54,33 @@ input {
   width: 400px;
   border: black 2px solid;
   border-radius: 5px;
+}
+.cart-input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+input:focus {
+  outline: none;
+  border: none;
+}
+.cart-items {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.cart-item {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid grey;
+}
+.cart-item input {
+  margin-right: 20px;
+}
+.delete-button {
+  background-color: transparent;
+  color: red;
+  padding: 0px;
+  margin-left: 20px;
 }
